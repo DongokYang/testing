@@ -14,16 +14,24 @@
     vr-mode-ui="enabled: false"
     renderer="antialias: true; alpha: true"
   >
-    <a-camera gps-camera rotation-reader></a-camera>
+  <a-camera gps-camera rotation-reader></a-camera>
 
-    <!-- Red box at original location -->
-    <a-box
-      color="red"
-      scale="5 5 5"
-      gps-entity-place="latitude: 49.896991; longitude: -97.139462"
-    ></a-box>
+  <!-- Red Box -->
+  <a-box color="red" scale="5 5 5"
+         gps-entity-place="latitude: 49.896991; longitude: -97.139462">
+  </a-box>
 
-    <!-- Duck slightly to the right and larger -->
+  <!-- Green Box (approx 2 meters east) -->
+  <a-box color="green" scale="5 5 5"
+         gps-entity-place="latitude: 49.896991; longitude: -97.139440">
+  </a-box>
+
+  <!-- Blue Box (approx 4 meters east) -->
+  <a-box color="blue" scale="5 5 5"
+         gps-entity-place="latitude: 49.896991; longitude: -97.139420">
+  </a-box>
+
+    <!-- 
     <a-entity 
       gltf-model="https://cdn.aframe.io/test-models/models/glTF/Duck/glTF/Duck.gltf"
       rotation="0 180 0"
@@ -31,7 +39,7 @@
       gps-entity-place="latitude: 49.896991; longitude: -97.139439"
       animation-mixer
     ></a-entity>
-
+ -->
   </a-scene>
 </body>
 </html>
