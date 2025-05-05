@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AR.js Location Demo</title>
+  <meta charset="utf-8">
+  <title>GeoAR.js Demo</title>
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 </head>
-<body>
-<a-scene
-  vr-mode-ui="enabled: false"
-  arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
-  renderer="antialias: true; alpha: true"
->
-  <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene
+    embedded
+    arjs="sourceType: webcam; gpsMinAccuracy: 100; debugUIEnabled: false"
+    vr-mode-ui="enabled: false"
+    renderer="antialias: true; alpha: true"
+  >
+    <a-camera gps-camera rotation-reader></a-camera>
 
-  <!-- Change the coordinates below to your actual location for testing -->
-  <a-entity
-    material="color: red"
-    geometry="primitive: box"
-    gps-new-entity-place="latitude: 49.896991; longitude: -97.139462"
-    scale="10 10 10"
-  ></a-entity>
-</a-scene>
+    <!-- This red box will appear at the given GPS location -->
+    <a-box
+      color="red"
+      scale="5 5 5"
+      gps-entity-place="latitude: 49.896991; longitude: -97.139462"
+    ></a-box>
+  </a-scene>
 </body>
 </html>
