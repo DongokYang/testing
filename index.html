@@ -16,19 +16,19 @@
   >
     <a-camera gps-camera rotation-reader></a-camera>
 
-    <!-- Optional red box -->
+    <!-- Red box at original location -->
     <a-box
       color="red"
       scale="5 5 5"
       gps-entity-place="latitude: 49.896991; longitude: -97.139462"
     ></a-box>
 
-    <!-- Known working glTF model -->
+    <!-- Duck slightly to the right and larger -->
     <a-entity 
       gltf-model="https://cdn.aframe.io/test-models/models/glTF/Duck/glTF/Duck.gltf"
       rotation="0 180 0"
-      scale="1 1 1"
-      gps-entity-place="latitude: 49.896991; longitude: -97.139462"
+      scale="3 3 3"
+      gps-entity-place="latitude: 49.896991; longitude: -97.139362"
       animation-mixer
     ></a-entity>
 
